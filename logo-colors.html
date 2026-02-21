@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPELLA WEB Logo - Color Options</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background: #f0f0f0;
+            font-family: 'Lato', sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo-card {
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 25px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .icon::before {
+            content: "C";
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .icon::after {
+            content: "";
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: white;
+            border-radius: 50%;
+            bottom: -12px;
+            right: -12px;
+            opacity: 0.25;
+        }
+        
+        .main {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4em;
+            font-weight: 700;
+            letter-spacing: 5px;
+        }
+        
+        .main span {
+            font-weight: 400;
+        }
+        
+        .tagline {
+            font-size: 0.85em;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 12px;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+        
+        .color-label {
+            margin-top: 20px;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* COLOR VARIATIONS */
+        
+        /* 1. Soft Coral */
+        .coral {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+        .coral .main { color: #2d3436; }
+        .coral .main span { color: #d63031; }
+        .coral .tagline { color: #636e72; }
+        .coral .icon { background: linear-gradient(135deg, #d63031 0%, #ff7675 100%); }
+        .coral .color-label { color: #d63031; }
+        
+        /* 2. Mint Green */
+        .mint {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+        .mint .main { color: #2d3436; }
+        .mint .main span { color: #00b894; }
+        .mint .tagline { color: #636e72; }
+        .mint .icon { background: linear-gradient(135deg, #00b894 0%, #00cec9 100%); }
+        .mint .color-label { color: #00b894; }
+        
+        /* 3. Sky Blue */
+        .sky {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+        }
+        .sky .main { color: #2d3436; }
+        .sky .main span { color: #0984e3; }
+        .sky .tagline { color: #2d3436; }
+        .sky .icon { background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%); }
+        .sky .color-label { color: #0984e3; }
+        
+        /* 4. Lavender */
+        .lavender {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+        }
+        .lavender .main { color: #2d3436; }
+        .lavender .main span { color: #6c5ce7; }
+        .lavender .tagline { color: #636e72; }
+        .lavender .icon { background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); }
+        .lavender .color-label { color: #6c5ce7; }
+        
+        /* 5. Soft Peach */
+        .peach {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+        .peach .main { color: #2d3436; }
+        .peach .main span { color: #e17055; }
+        .peach .tagline { color: #636e72; }
+        .peach .icon { background: linear-gradient(135deg, #e17055 0%, #fab1a0 100%); }
+        .peach .color-label { color: #e17055; }
+        
+        /* 6. Sage Green */
+        .sage {
+            background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+        }
+        .sage .main { color: #2d3436; }
+        .sage .main span { color: #00b894; }
+        .sage .tagline { color: #2d3436; }
+        .sage .icon { background: linear-gradient(135deg, #00b894 0%, #55efc4 100%); }
+        .sage .color-label { color: #00b894; }
+        
+        /* 7. Blush Pink */
+        .blush {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+        .blush .main { color: #2d3436; }
+        .blush .main span { color: #e84393; }
+        .blush .tagline { color: #636e72; }
+        .blush .icon { background: linear-gradient(135deg, #e84393 0%, #fd79a8 100%); }
+        .blush .color-label { color: #e84393; }
+        
+        /* 8. Ocean Teal */
+        .teal {
+            background: linear-gradient(135deg, #81ecec 0%, #74b9ff 100%);
+        }
+        .teal .main { color: #2d3436; }
+        .teal .main span { color: #00cec9; }
+        .teal .tagline { color: #2d3436; }
+        .teal .icon { background: linear-gradient(135deg, #00cec9 0%, #81ecec 100%); }
+        .teal .color-label { color: #00cec9; }
+        
+        /* 9. Soft Rose */
+        .rose {
+            background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%);
+        }
+        .rose .main { color: #2d3436; }
+        .rose .main span { color: #e84393; }
+        .rose .tagline { color: #636e72; }
+        .rose .icon { background: linear-gradient(135deg, #e84393 0%, #fd79a8 100%); }
+        .rose .color-label { color: #e84393; }
+        
+        /* 10. Cream/Gold */
+        .cream {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe0b2 100%);
+        }
+        .cream .main { color: #2d3436; }
+        .cream .main span { color: #f39c12; }
+        .cream .tagline { color: #636e72; }
+        .cream .icon { background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%); }
+        .cream .icon::before { color: #2d3436; }
+        .cream .color-label { color: #f39c12; }
+        
+        .instructions {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 20px;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff3cd 0%, #ffe4b5 100%);
+            border-radius: 15px;
+            color: #856404;
+            line-height: 1.8;
+        }
+        
+        .instructions strong {
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CAPELLA WEB Logo - Color Options</h1>
+    <p class="subtitle">Version 1: Ge
