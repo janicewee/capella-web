@@ -4,45 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAPELLA WEB | Websites That Get You Customers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
-        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 80px 20px; text-align: center; }
-        header h1 { font-size: 2.5em; margin-bottom: 10px; }
-        header .tagline { font-size: 1.3em; color: #c17f59; margin-bottom: 20px; }
-        header .uen { font-size: 0.9em; opacity: 0.8; }
+        body { font-family: 'Lato', sans-serif; line-height: 1.7; color: #333; font-weight: 400; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 600; }
+        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 100px 20px; text-align: center; }
+        header h1 { font-size: 3.2em; margin-bottom: 15px; letter-spacing: 3px; font-weight: 700; }
+        header .tagline { font-size: 1.4em; color: #c17f59; margin-bottom: 25px; font-weight: 300; letter-spacing: 1px; }
+        header .uen { font-size: 0.85em; opacity: 0.7; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
         nav { background: #6b4e4e; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; }
-        nav a { color: white; text-decoration: none; margin: 0 20px; font-weight: 500; }
+        nav a { color: white; text-decoration: none; margin: 0 20px; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; font-size: 0.85em; transition: all 0.3s ease; }
+        nav a:hover { color: #f5d5d5; letter-spacing: 2px; }
         nav a:hover { color: #f5d5d5; }
         section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
-        .hero { text-align: center; background: #f8f5f5; }
-        .hero h2 { font-size: 2em; color: #6b4e4e; margin-bottom: 20px; }
+        .hero { text-align: center; background: linear-gradient(180deg, #f8f5f5 0%, #fff 100%); padding: 80px 20px; }
+        .hero h2 { font-size: 2.4em; color: #6b4e4e; margin-bottom: 20px; font-weight: 600; }
         .hero p { font-size: 1.1em; max-width: 700px; margin: 0 auto 30px; }
-        .services { background: #f8f5f5; }
-        .services h2 { text-align: center; color: #6b4e4e; margin-bottom: 40px; }
+        .services { background: linear-gradient(180deg, #fff 0%, #f8f5f5 50%, #fff 100%); padding: 80px 20px; }
+        .services h2 { text-align: center; color: #6b4e4e; margin-bottom: 40px; font-size: 2.2em; }
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .service-card h3 { color: #c17f59; margin-bottom: 15px; }
-        .service-card .price { font-size: 1.5em; font-weight: bold; color: #6b4e4e; margin-bottom: 15px; }
+        .service-card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+        .service-card h3 { color: #c17f59; margin-bottom: 20px; font-weight: 600; letter-spacing: 0.5px; }
+        .service-card .price { font-size: 1.8em; font-weight: 700; color: #c17f59; margin-bottom: 20px; font-family: 'Playfair Display', serif; letter-spacing: 1px; }
         .service-card ul { list-style: none; padding: 0; }
         .service-card li { padding: 8px 0; border-bottom: 1px solid #f0e0e0; }
         .service-card li:before { content: "✓ "; color: #28a745; font-weight: bold; }
         .portfolio { background: white; }
-        .portfolio h2 { text-align: center; color: #6b4e4e; margin-bottom: 40px; }
+        .portfolio h2 { text-align: center; color: #6b4e4e; margin-bottom: 40px; font-size: 2.2em; }
         .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .portfolio-item { background: #f8f5f5; padding: 20px; border-radius: 10px; text-align: center; }
+        .portfolio-item { background: white; padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0e0e0; transition: all 0.3s ease; }
+        .portfolio-item:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.1); transform: translateY(-3px); }
         .portfolio-item h3 { color: #6b4e4e; margin-bottom: 10px; }
-        .portfolio-item a { color: #c17f59; text-decoration: none; font-weight: 500; }
+        .portfolio-item a { color: #c17f59; text-decoration: none; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9em; }
         .process { background: #1a1a2e; color: white; }
-        .process h2 { text-align: center; margin-bottom: 40px; }
+        .process h2 { text-align: center; margin-bottom: 40px; font-size: 2.2em; }
         .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .step { background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; text-align: center; }
-        .step h3 { color: #c17f59; margin-bottom: 10px; }
+        .step { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.2); }
+        .step h3 { color: #c17f59; margin-bottom: 15px; font-size: 1.4em; }
+        .step p { font-weight: 300; opacity: 0.9; }
         .cta { background: linear-gradient(135deg, #c17f59 0%, #8b5a5a 100%); color: white; text-align: center; }
-        .cta h2 { margin-bottom: 20px; }
-        .cta-box { background: rgba(255,255,255,0.95); color: #333; padding: 30px; border-radius: 15px; max-width: 600px; margin: 0 auto; }
-        .btn { display: inline-block; background: #c17f59; color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; margin-top: 20px; }
-        footer { background: #1a1a2e; color: rgba(255,255,255,0.6); text-align: center; padding: 30px; font-size: 0.9em; }
+        .cta h2 { margin-bottom: 20px; font-size: 2.4em; }
+        .cta-box { background: rgba(255,255,255,0.95); color: #333; padding: 50px; border-radius: 20px; max-width: 600px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
+        .btn { display: inline-block; background: #c17f59; color: white; padding: 18px 50px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 20px; letter-spacing: 1.5px; text-transform: uppercase; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(193,127,89,0.3); }
+        .btn:hover { background: #8b5a5a; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(193,127,89,0.4); }
+        footer { background: #1a1a2e; color: rgba(255,255,255,0.5); text-align: center; padding: 40px; font-size: 0.9em; font-weight: 300; letter-spacing: 0.5px; }
     </style>
 </head>
 <body>
