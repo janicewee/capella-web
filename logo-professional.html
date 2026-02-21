@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPELLA WEB - Professional Logo Options</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #f0f0f0;
+            padding: 40px 20px;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo-box {
+            padding: 50px 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Logo Design - Consistent */
+        .icon {
+            width: 85px;
+            height: 85px;
+            margin: 0 auto 25px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+        
+        .icon::before {
+            content: "C";
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2em;
+            font-weight: 700;
+        }
+        
+        .icon::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            bottom: -10px;
+            right: -10px;
+        }
+        
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 5px;
+        }
+        
+        .name span {
+            font-weight: 400;
+        }
+        
+        .tagline {
+            font-size: 0.8em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+        
+        .label {
+            margin-top: 20px;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        /* COLOR OPTIONS */
+        
+        /* 1. Navy Blue - Sophisticated */
+        .navy {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            color: white;
+        }
+        .navy .icon {
+            background: linear-gradient(135deg, #c9a227 0%, #d4af37 100%);
+        }
+        .navy .icon::before { color: #1e3a5f; }
+        .navy .name { color: white; }
+        .navy .name span { color: #d4af37; }
+        .navy .tagline { color: rgba(255,255,255,0.7); }
+        .navy .label { color: #1e3a5f; }
+        
+        /* 2. Charcoal - Modern Professional */
+        .charcoal {
+            background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
+            color: white;
+        }
+        .charcoal .icon {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+        }
+        .charcoal .icon::before { color: #2d2d2d; }
+        .charcoal .name { color: white; }
+        .charcoal .name span { color: #ffffff; }
+        .charcoal .tagline { color: rgba(255,255,255,0.6); }
+        .charcoal .label { color: #2d2d2d; }
+        
+        /* 3. Forest Green - Luxurious */
+        .forest {
+            background: linear-gradient(135deg, #1a3c27 0%, #2d5a3d 100%);
+            color: white;
+        }
+        .forest .icon {
+            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+        }
+        .forest .icon::before { color: #1a3c27; }
+        .forest .name { color: white; }
+        .forest .name span { color: #d4af37; }
+        .forest .tagline { color: rgba(255,255,255,0.7); }
+        .forest .label { color: #1a3c27; }
+        
+        /* 4. Burgundy - Bold Elegant */
+        .burgundy {
+            background: linear-gradient(135deg, #4a1c2c 0%, #6b2d3c 100%);
+            color: white;
+        }
+        .burgundy .icon {
+            background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+        }
+        .burgundy .icon::before { color: #4a1c2c; }
+        .burgundy .name { color: white; }
+        .burgundy .name span { color: #d4af37; }
+        .burgundy .tagline { color: rgba(255,255,255,0.7); }
+        .burgundy .label { color: #4a1c2c; }
+        
+        /* 5. Black Gold - Premium */
+        .blackgold {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: white;
+        }
+        .blackgold .icon {
+            background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+        }
+        .blackgold .icon::before { color: #0a0a0a; }
+        .blackgold .name { color: white; }
+        .blackgold .name span { color: #d4af37; }
+        .blackgold .tagline { color: rgba(255,255,255,0.6); }
+        .blackgold .label { color: #1a1a1a; }
+        
+        /* 6. Cream Navy - Classic */
+        .cream {
+            background: linear-gradient(135deg, #faf8f5 0%, #f5f0e8 100%);
+            border: 2px solid #e0e0e0;
+        }
+        .cream .icon {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+        }
+        .cream .icon::before { color: white; }
+        .cream .name { color: #1e3a5f; }
+        .cream .name span { color: #c9a227; }
+        .cream .tagline { color: #666; }
+        .cream .label { color: #1e3a5f; background: white; border: 1px solid #ddd; }
+        
+        .instructions {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 30px;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .instructions p {
+            color: #666;
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <h1>CAPELLA WEB - Professional Options</h1>
+    <p class="subtitle">Version 1 with sophisticated, elegant colors</p>
+    
+    <div class="grid">
+        <!-- Navy Blue + Gold -->
+        <div class="logo-box navy">
+            <div class="icon"></div>
+            <div class="name">CAPELLA <span>WEB</span></div>
+            <div class="tagline">Website Design Studio</div>
+            <div class="label">Navy + Gold</div>
+        </div>
+        
+        <!-- Charcoal + White -->
+        <div class="logo-box charcoal">
+            <div class="icon"></div>
+            <div class="name">CAPELLA <span>WEB</span></div>
+            <div class="tagline">Website Design Studio</div>
+            <div class="label">Charcoal + White</div>
+        </div>
+        
+        <!-- Forest + Gold -->
+        <div class="logo-box forest">
+            <div class="icon"></div>
+            <div class="name">CAPELLA <span>WEB</></div>
+            <div class="tagline">Website Design Studio</div>
+            <div class="label">Forest + Gold</div>
+        </div>
+        
+        <!-- Burgundy + Gold -->
+        <div class="logo-box burgundy">
+            <div class="icon"></div>
+            <div class="name">CAPELLA <span>WEB</span></div>
+            <div class="tagline">Website Design Studio</div>
+            <div class="label">Burgundy + Gold</div>
+        </div>
+        
+        <!-- Black + Gold -->
+        <div class="logo-box blackgold">
+            <div class="icon"></div>
+            <div class="name">CAPELLA <span>WEB</span></div>
+            <div class="tagline">Website Design Studio</div>
+            <div class="label">Black + Gold</div>
+        </div>
+        
+        <!-- Cream + Navy -->
+        <div class="logo-box cream">
+            <div class="icon"></div>
+            <div class="name">CAPELLA <span>WEB</span></div>
+            <div class="tagline">Website Design Studio</div>
+            <div class="label">Cream + Navy</div>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        <p><strong>To save your logo:</strong></p>
+        <p>Open this file locally → Cmd+Shift+4 → Select the logo box → Screenshot saves to Desktop</p>
+        <p style="margin-top: 10px; color: #999;">Open: Cmd+Shift+G → /Users/janice/.openclaw/workspace/demo-sites/capella-web/ → logo-professional.html</p>
+    </div>
+</body>
+</html>
