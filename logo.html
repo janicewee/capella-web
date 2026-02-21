@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPELLA WEB Logo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f5f5f5;
+        }
+        
+        /* Logo Version 1: Elegant Minimal */
+        .logo-v1 {
+            text-align: center;
+            padding: 60px 80px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .logo-v1 .main {
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
+            font-weight: 700;
+            color: #1a1a2e;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+        }
+        .logo-v1 .sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2em;
+            color: #c17f59;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+        .logo-v1 .line {
+            width: 60px;
+            height: 2px;
+            background: #c17f59;
+            margin: 20px auto;
+        }
+        
+        /* Logo Version 2: Modern & Bold */
+        .logo-v2 {
+            text-align: center;
+            padding: 60px 80px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 10px;
+            margin-left: 40px;
+        }
+        .logo-v2 .main {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 6px;
+        }
+        .logo-v2 .accent {
+            color: #c17f59;
+        }
+        .logo-v2 .sub {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+        
+        /* Logo Version 3: Compact (for favicon/small use) */
+        .logo-v3 {
+            text-align: center;
+            padding: 40px 60px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-left: 40px;
+            border: 2px solid #1a1a2e;
+        }
+        .logo-v3 .main {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #1a1a2e;
+            letter-spacing: 4px;
+        }
+        .logo-v3 .sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9em;
+            color: #6b4e4e;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .label {
+            text-align: center;
+            color: #666;
+            font-family: sans-serif;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+        
+        h1 {
+            width: 100%;
+            text-align: center;
+            font-family: sans-serif;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .instructions {
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #fff3cd;
+            border-radius: 10px;
+            font-family: sans-serif;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Your CAPELLA WEB Logo</h1>
+        
+        <!-- Version 1: Elegant Minimal -->
+        <div>
+            <div class="logo-v1">
+                <div class="main">CAPELLA</div>
+                <div class="line"></div>
+                <div class="sub">Web Design Studio</div>
+            </div>
+            <div class="label">Version 1: Elegant (for website header)</div>
+        </div>
+        
+        <!-- Version 2: Modern Dark -->
+        <div>
+            <div class="logo-v2">
+                <div class="main">CAPELLA <span class="accent">WEB</span></div>
+                <div class="sub">Websites That Get Customers</div>
+            </div>
+            <div class="label">Version 2: Modern Dark (for social media)</div>
+        </div>
+        
+        <!-- Version 3: Compact -->
+        <div>
+            <div class="logo-v3">
+                <div class="main">CAPELLA WEB</div>
+                <div class="sub">Website Design</div>
+            </div>
+            <div class="label">Version 3: Compact (for business cards)</div>
+        </div>
+        
+        <div class="instructions">
+            <strong>How to use:</strong><br><br>
+            1. Take a screenshot of your chosen logo<br>
+            2. Crop it to just the logo<br>
+            3. Save as PNG<br>
+            4. Upload to your Google Business Profile<br><br>
+            Or right-click → "Save Image" if your browser allows it
+        </div>
+    </div>
+    
+    <!-- Standalone versions for individual screenshot -->
+    <div style="position: absolute; left: -9999px;">
+        <div class="logo-v1" id="logo1">
+            <div class="main">CAPELLA</div>
+            <div class="line"></div>
+            <div class="sub">Web Design Studio</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -41,7 +41,7 @@ Why Choose Us:
 Based in Bukit Panjang, serving all of Singapore.
 
 WhatsApp: 9663 9432
-Email: janiceweety@gmail.com
+Email: janice@capellaweb.org
 ```
 
 ## Services to Add
@@ -216,7 +216,7 @@ What you get:
 Limited slots available. WhatsApp me to discuss your business!
 
 📱 9663 9432
-✉️ janiceweety@gmail.com
+✉️ janice@capellaweb.org
 ```
 **Photo:** Collage of your demo websites
 **Button:** WhatsApp
