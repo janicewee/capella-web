@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVOICE - CAPELLA WEB</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            color: #333;
+            font-size: 10pt;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #1e3a5f;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .logo { font-size: 1.8em; color: #1e3a5f; font-weight: bold; letter-spacing: 2px; }
+        .logo span { color: #d4af37; }
+        .uen { font-size: 0.85em; color: #666; margin-top: 3px; }
+        .invoice-title { 
+            font-size: 1.4em; 
+            font-weight: bold; 
+            color: #1e3a5f; 
+            margin-top: 8px;
+            padding: 5px 20px;
+            border: 2px solid #1e3a5f;
+            display: inline-block;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; }
+        th { background: #f0f4f8; color: #1e3a5f; }
+        .client-box { 
+            background: #fff3cd; 
+            border: 2px solid #ffc107; 
+            padding: 15px; 
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .client-box strong { color: #856404; }
+        .fill-line { 
+            border-bottom: 1px solid #333; 
+            display: inline-block; 
+            min-width: 250px; 
+            margin: 0 5px;
+        }
+        .highlight { background: #e8f4ff; padding: 12px; margin: 15px 0; border-left: 4px solid #1e3a5f; }
+        .total-box { 
+            background: linear-gradient(90deg, #1e3a5f, #2c5282); 
+            color: white; 
+            padding: 15px; 
+            text-align: center; 
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .total-amount { font-size: 1.8em; font-weight: bold; color: #d4af37; }
+        .checkbox { 
+            display: inline-block; 
+            width: 16px; 
+            height: 16px; 
+            border: 2px solid #333; 
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .service-item { margin: 8px 0; }
+        .stamp-area {
+            border: 3px double #1e3a5f;
+            padding: 20px;
+            text-align: center;
+            margin: 30px 0;
+            min-height: 120px;
+        }
+        .stamp-area p { color: #999; font-style: italic; margin-top: 30px; }
+        @media print {
+            body { padding: 20px; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">CAPELLA <span>WEB</span></div>
+        <div class="uen">UEN: 53518964L (ACRA Singapore Registered)</div>
+        <div style="font-size: 0.9em; color: #666; margin-top: 5px;">janice@capellaweb.org | capellaweb.org</div>
+        <div class="invoice-title">TAX INVOICE</div>
+    </div>
+
+    <!-- CLIENT INFO SECTION -->
+    <div class="client-box">
+        <strong>BILL TO:</strong><br>
+        Business Name: <span class="fill-line">&nbsp;</span><br><br>
+        Contact Person: <span class="fill-line">&nbsp;</span><br><br>
+        Address: <span class="fill-line" style="min-width: 400px;">&nbsp;</span><br><br>
+        Contact Number: <span class="fill-line">&nbsp;</span>
+    </div>
+
+    <table>
+        <tr>
+            <th style="width: 50%;">Invoice Details</th>
+            <th style="width: 50%;">Payment Information</th>
+        </tr>
+        <tr>
+            <td>
+                Invoice #: <span class="fill-line" style="min-width: 100px;">&nbsp;</span><br><br>
+                Date Issued: <span class="fill-line" style="min-width: 120px;">&nbsp;</span><br><br>
+                Due Date: <span class="fill-line" style="min-width: 120px;">&nbsp;</span>
+            </td>
+            <td>
+                <strong>Bank Transfer:</strong><br>
+                Bank: <span class="fill-line">&nbsp;</span><br>
+                Account Name: Janice Wee / CAPELLA WEB<br>
+                Account #: <span class="fill-line">&nbsp;</span><br><br>
+                <strong>OR PayNow:</strong><br>
+                UEN: 53518964L (CAPELLA WEB)
+            </td>
+        </tr>
+    </table>
+
+    <h2 style="color: #1e3a5f; border-bottom: 2px solid #d4af37; padding-bottom: 5px; margin: 20px 0 15px;">SERVICES</h2>
+
+    <table>
+        <tr>
+            <th style="width: 8%;">Select</th>
+            <th style="width: 52%;">Description</th>
+            <th style="width: 20%;">Unit Price</th>
+            <th style="width: 20%;">Amount (S$)</th>
+        </tr>
+        <tr>
+            <td style="text-align: center;"><span class="checkbox"></span></td>
+            <td><strong>1-Page Website (5 Sections)</strong><br>
+                Hero, Services, Gallery, About, Contact<br>
+                Mobile responsive, WhatsApp integration, free hosting</td>
+            <td>500.00</td>
+            <td><span class="fill-line" style="min-width: 80px;">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;"><span class="checkbox"></span></td>
+            <td><strong>Google Business Setup (DIY Guidance)</strong><br>
+                Setup guide + 30min training + content templates</td>
+            <td>100.00</td>
+            <td><span class="fill-line" style="min-width: 80px;">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;"><span class="checkbox"></span></td>
+            <td><strong>Google Business Setup (Full Service)</strong><br>
+                Complete setup, verification, 20+ photos, 4 posts</td>
+            <td>200.00</td>
+            <td><span class="fill-line" style="min-width: 80px;">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;"><span class="checkbox"></span></td>
+            <td><strong>WhatsApp Review System</strong><br>
+                Templates, QR code, quick replies, training</td>
+            <td>150.00</td>
+            <td><span class="fill-line" style="min-width: 80px;">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;"><span class="checkbox"></span></td>
+            <td><strong>Additional Pages</strong><br>
+                Per additional page requested
+                <span class="fill-line" style="min-width: 50px;">qty</span> x 80.00</td>
+            <td>80.00</td>
+            <td><span class="fill-line" style="min-width: 80px;">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;"><span class="checkbox"></span></td>
+            <td><strong>Other</strong><br>
+                <span class="fill-line" style="min-width: 300px;">&nbsp;</span></td>
+            <td><span class="fill-line" style="min-width: 60px;">&nbsp;</span></td>
+            <td><span class="fill-line" style="min-width: 80px;">&nbsp;</span></td>
+        </tr>
+        <tr style="background: #f0f4f8;">
+            <td colspan="3" style="text-align: right;"><strong>SUBTOTAL:</strong></td>
+            <td><span class="fill-line" style="min-width: 80px;">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: right;"><strong>GST (0%):</strong></td>
+            <td>0.00</td>
+        </tr>
+        <tr style="background: #1e3a5f; color: white;">
+            <td colspan="3" style="text-align: right; font-size: 1.1em;"><strong>T            <td colspan="3" style="text-align: right; font-size: 1.1em;"><strong>TOTAL AMOUNT DUE:</strong></td>
+            <td style="font-weight: bold; font-size: 1.2em;">S$<span class="fill-line" style="min-width: 80px;">&nbsp;</span></td>
+        </tr>
+    </table>
+
+    <div class="highlight">
+        <strong>Payment Terms:</strong> 50% deposit upon invoice acceptance | 50% final payment upon project completion<br><br>
+        <strong>Due Dates:</strong><br>
+        Deposit Due: <span class="fill-line" style="min-width: 120px;">&nbsp;</span><br>
+        Final Payment Due: <span class="fill-line" style="min-width: 120px;">&nbsp;</span>
+    </div>
+
+    <h3 style="color: #1e3a5f; margin: 20px 0 10px;">Payment Instructions</h3>
+    <table>
+        <tr>
+            <td style="width: 50%;">
+                <strong>PayNow (Preferred):</strong><br>
+                UEN: 53518964L<br>
+                Entity Name: CAPELLA WEB
+            </td>
+            <td style="width: 50%;">
+                <strong>Bank Transfer:</strong><br>
+                [Contact for bank details]
+            </td>
+        </tr>
+    </table>
+
+    <div class="stamp-area">
+        <p>[Authorised Signature & Company Stamp]</p>
+    </div>
+
+    <p style="text-align: center; color: #666; font-size: 0.85em; margin-top: 30px;">
+        Thank you for your business!<br>
+        This is a computer-generated invoice. No signature required unless noted.
+    </p>
+
+</body>
+</html>

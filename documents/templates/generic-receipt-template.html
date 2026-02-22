@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFFICIAL RECEIPT - CAPELLA WEB</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            color: #333;
+            font-size: 10pt;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #1e3a5f;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.8em; color: #1e3a5f; font-weight: bold; letter-spacing: 2px; }
+        .logo span { color: #d4af37; }
+        .uen { font-size: 0.85em; color: #666; margin-top: 3px; }
+        .receipt-number {
+            border: 2px solid #d4af37;
+            padding: 10px 20px;
+            font-weight: bold;
+            color: #1e3a5f;
+            font-size: 1.1em;
+        }
+        .receipt-title { 
+            font-size: 1.5em; 
+            font-weight: bold; 
+            color: #1e3a5f; 
+            margin-top: 15px;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #f0f4f8; color: #1e3a5f; }
+        .highlight-box { 
+            background: #e8f4ff; 
+            border-left: 4px solid #1e3a5f;
+            padding: 15px; 
+            margin: 15px 0;
+        }
+        .amount-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .amount-display {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #1e3a5f;
+        }
+        .fill-line { 
+            border-bottom: 1px solid #333; 
+            display: inline-block; 
+            min-width: 250px; 
+            margin: 0 5px;
+        }
+        .fill-line-short {
+            border-bottom: 1px solid #333;
+            display: inline-block;
+            min-width: 100px;
+            margin: 0 5px;
+        }
+        .signature-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        .signature-box {
+            border-top: 1px solid #333;
+            padding-top: 10px;
+            margin-top: 50px;
+            min-height: 60px;
+        }
+        .stamp-box {
+            border: 3px double #1e3a5f;
+            padding: 20px;
+            text-align: center;
+            min-height: 100px;
+            margin-top: 10px;
+        }
+        .stamp-box p { color: #999; font-style: italic; }
+        .payment-method {
+            background: #f0f4f8;
+            padding: 10px 15px;
+            margin: 5px 0;
+            border-radius: 3px;
+        }
+        @media print {
+            body { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-row">
+            <div>
+                <div class="logo">CAPELLA <span>WEB</span></div>
+                <div class="uen">UEN: 53518964L (ACRA Singapore)</div>
+                <div style="font-size: 0.85em; color: #666;">janice@capellaweb.org | capellaweb.org</div>
+            </div>
+            <div class="receipt-number">
+                RECEIPT #: <span class="fill-line-short">&nbsp;</span>
+            </div>
+        </div>
+        <div class="receipt-title">OFFICIAL RECEIPT</div>
+    </div>
+
+    <table>
+        <tr>
+            <th style="width: 50%;">Received From</th>
+            <th style="width: 50%;">Receipt Details</th>
+        </tr>
+        <tr>
+            <td>
+                Business Name:<br>
+                <span class="fill-line">&nbsp;</span><br><br>
+                Contact Person:<br>
+                <span class="fill-line">&nbsp;</span>
+            </td>
+            <td>
+                Date Received: <span class="fill-line-short">&nbsp;</span><br><br>
+                For Invoice #: <span class="fill-line-short">&nbsp;</span><br><br>
+                Payment Method:
+                <div style="margin-top: 5px;">
+                    <span style="margin-right: 15px;">☐ PayNow</span>
+                    <span style="margin-right: 15px;">☐ Bank Transfer</span>
+                    <span style="margin-right: 15px;">☐ Cash</span>
+                    <span>☐ Other</span>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="amount-box">
+        <div style="font-size: 0.9em; color: #666; margin-bottom: 5px;">AMOUNT RECEIVED</div>
+        <div class="amount-display">S$<span class="fill-line" style="min-width: 200px;">&nbsp;</span></div>
+        <div style="margin-top: 10px; font-size: 0.95em;">
+            Amount in Words: <span class="fill-line" style="min-width: 350px;">&nbsp;</span>
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Description of Payment</th>
+            <th>For</th>
+            <th style="text-align: right;">Amount (S$)</th>
+        </tr>
+        <tr>
+            <td>Website Development Services</td>
+            <td><span class="fill-line-short">&nbsp;</span></td>
+            <td style="text-align: right;"><span class="fill-line-short">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td>Google Business Profile Setup</td>
+            <td><span class="fill-line-short">&nbsp;</span></td>
+            <td style="text-align: right;"><span class="fill-line-short">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td>WhatsApp Review System</td>
+            <td><span class="fill-line-short">&nbsp;</span></td>
+            <td style="text-align: right;"><span class="fill-line-short">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td>Other: <span class="fill-line-short">&nbsp;</span></td>
+            <td><span class="fill-line-short">&nbsp;</span></td>
+            <td style="text-align: right;"><span class="fill-line-short">&nbsp;</span></td>
+        </tr>
+        <tr style="background: #f0f4f8;">
+            <td colspan="2" style="text-align: right;"><strong>TOTAL PAID:</strong></td>
+            <td style="text-align: right; font-weight: bold;">S$<span class="fill-line-short">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: right;">Previous Balance (if any):</td>
+            <td style="text-align: right;">S$<span class="fill-line-short">&nbsp;</span></td>
+        </tr>
+        <tr style="background: #1e3a5f; color: white;">
+            <td colspan="2" style="text-align: right;"><strong>BALANCE DUE:</strong></td>
+            <td style="text-align: right; font-weight: bold;">S$<span class="fill-line-short">&nbsp;</span></td>
+        </tr>
+    </table>
+
+    <div class="highlight-box">
+        <strong>This receipt acknowledges that the above amount has been received by CAPELLA WEB (UEN: 53518964L).</strong><br>
+        For any questions regarding this receipt, please contact: janice@capellaweb.org
+    </div>
+
+    <div class="signature-area">
+        <div>
+            <p><strong>Received By:</strong></p>
+            <div class="signature-box"></div>
+            <p>Janice Wee, CAPELLA WEB</p>
+            <div class="stamp-box">
+                <p>[Company Stamp]</p>
+            </div>
+        </div>
+        <div>
+            <p><strong>Acknowledged By (Client):</strong></p>
+            <div class="signature-box"></div>
+            <p>Name: <span class="fill-line">&nbsp;</span></p>
+            <p>Date: <span class="fill-line-short">&nbsp;</span></p>
+        </div>
+    </div>
+
+    <p style="text-align: center; color: #666; font-size: 0.85em; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;">
+        <strong>Thank you for your business!</strong><br>
+        This is an official receipt issued by CAPELLA WEB (UEN: 53518964L)<br>
+        Registered Business in Singapore
+    </p>
+
+</body>
+</html>
