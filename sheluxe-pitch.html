@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheluxe Website Proposal - 5 Packages Corrected</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, "Microsoft YaHei", sans-serif; background: #1a1a2e; color: #fff; overflow: hidden; }
+        .slide { width: 100vw; height: 100vh; display: none; padding: 40px; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .slide.active { display: flex; }
+        .chinese { color: rgba(255,255,255,0.8); font-size: 0.85em; display: block; margin-top: 2px; }
+        
+        .slide-1 { background: linear-gradient(135deg, #f8e5e5, #fae8e8); color: #6b4e4e; }
+        .slide-1 h1 { font-size: 2.8em; margin-bottom: 10px; }
+        .slide-1 h2 { font-size: 1.3em; font-weight: normal; margin-bottom: 20px; }
+        
+        .packages-preview { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+        .package-mini { background: rgba(255,255,255,0.95); padding: 15px; border-radius: 12px; min-width: 130px; color: #333; }
+        .package-mini h3 { color: #8b5a5a; font-size: 0.85em; margin-bottom: 5px; }
+        .package-mini .price { font-size: 1.6em; font-weight: bold; color: #c17f59; }
+        .package-mini .save { font-size: 0.7em; color: #28a745; font-weight: bold; }
+        
+        .slide-2 { background: #16213e; }
+        .slide-2 h2 { color: #ff6b8a; font-size: 1.8em; margin-bottom: 25px; }
+        .problems { display: flex; gap: 30px; max-width: 900px; }
+        .problem-box { flex: 1; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 12px; text-align: left; }
+        .problem-box h3 { color: #ffc107; margin-bottom: 12px; }
+        .problem-box ul { list-style: none; }
+        .problem-box li { padding: 6px 0; }
+        .problem-box li::before { content: "→ "; color: #ff6b8a; }
+        
+        .slide-package { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .slide-package h2 { font-size: 1.5em; margin-bottom: 10px; }
+        .price-tag { font-size: 2.3em; font-weight: bold; color: #ffd700; margin-bottom: 15px; }
+        .save-badge { background: #28a745; color: white; padding: 6px 15px; border-radius: 20px; display: inline-block; margin-bottom: 15px; font-size: 0.9em; }
+        .recommended-badge { background: #d4af37; color: #1e3a5f; padding: 6px 20px; border-radius: 20px; display: inline-block; margin-bottom: 15px; font-weight: bold; }
+        .package-content { display: flex; gap: 25px; max-width: 950px; text-align: left; }
+        .you-get, .you-provide { flex: 1; background: rgba(255,255,255,0.15); padding: 18px; border-radius: 12px; }
+        .you-get h3, .you-provide h3 { color: #00d9ff; margin-bottom: 10px; font-size: 0.95em; }
+        .you-get h3::before { content: "✓ "; color: #28a745; }
+        .you-provide h3::before { content: "📋 "; }
+        .you-get ul, .you-provide ul { list-style: none; font-size: 0.82em; }
+        .you-get li, .you-provide li { padding: 3px 0; }
+        .note { background: rgba(255,255,255,0.2); padding: 10px; border-radius: 8px; margin-top: 10px; font-size: 0.78em; }
+        
+        .section-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+        .section-tag { background: rgba(212,175,55,0.3); padding: 4px 10px; border-radius: 12px; font-size: 0.75em; color: #ffd700; }
+        
+        .slide-green { background: linear-gradient(135deg, #11998e, #38ef7d); color: #333; }
+        .slide-green .price-tag { color: #0d5c4d; }
+        .slide-green .you-get h3 { color: #0d5c4d; }
+        .slide-green .you-get, .slide-green .you-provide { background: rgba(255,255,255,0.9); }
+        .slide-green .chinese { color: #555; }
+        .slide-green .section-tag { background: rgba(13,92,77,0.2); color: #0d5c4d; }
+        
+        .slide-pink { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        
+        .slide-gold { background: linear-gradient(135deg, #1e3a5f, #2c5282); }
+        .slide-gold .price-tag { font-size: 2.8em; color: #d4af37; }
+        
+        .slide-booking { background: #fff; color: #333; }
+        .slide-booking h2 { color: #6b4e4e; font-size: 1.8em; margin-bottom: 25px; }
+        .booking-demo { display: flex; gap: 25px; }
+        .booking-card { background: #f8f5f5; padding: 20px; border-radius: 12px; width: 250px; border: 2px solid #f0e0e0; }
+        .booking-card h3 { color: #8b5a5a; margin-bottom: 8px; }
+        .icon { font-size: 2em; margin-bottom: 8px; }
+        
+        .slide-timeline { background: #0f0f23; }
+        .slide-timeline h2 { color: #00d9ff; font-size: 1.8em; margin-bottom: 25px; }
+        .timeline { display: flex; gap: 20px; }
+        .timeline-step { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 12px; width: 180px; }
+        .timeline-step h3 { color: #ffc107; font-size: 1.3em; }
+        .timeline-step h4 { margin: 8px 0; font-size: 0.95em; }
+        
+        .slide-pricing { background: #1a1a2e; }
+        .slide-pricing h2 { font-size: 1.6em; margin-bottom: 20px; }
+        .pricing-table { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; max-width: 1100px; }
+        .price-card { background: rgba(255,255,255,0.1); padding: 18px; border-radius: 12px; width: 180px; position: relative; }
+        .price-card.popular { background: linear-gradient(135deg, #f8e5e5, #ffe4e1); color: #6b4e4e; transform: scale(1.05); border: 3px solid #c17f59; }
+        .price-card.complete { background: linear-gradient(135deg, #d4af37, #f4e4bc); color: #1e3a5f; transform: scale(1.05); border: 3px solid #1e3a5f; }
+        .price-card .badge { position: absolute; top: -8px; right: -5px; background: #c17f59; color: white; padding: 4px 8px; border-radius: 10px; font-size: 0.65em; }
+        .price-card.complete .badge { background: #1e3a5f; }
+        .price-card h3 { font-size: 0.9em; margin-bottom: 6px; }
+        .price-card .amount { font-size: 1.6em; font-weight: bold; color: #c17f59; margin-bottom: 8px; }
+        .price-card.popular .amount { color: #8b5a5a; }
+        .price-card.complete .amount { color: #1e3a5f; font-size: 1.9em; }
+        .price-card ul { list-style: none; text-align: left; font-size: 0.7em; }
+        .price-card li { padding: 2px 0; }
+        .price-card li::before { content: "✓ "; color: #28a745; font-weight: bold; }
+        .price-card .save { color: #28a745; font-size: 0.75em; font-weight: bold; }
+        
+        .slide-cta { background: linear-gradient(135deg, #c17f59, #8b5a5a); }
+        .slide-cta h2 { font-size: 2.2em; margin-bottom: 25px; }
+        .cta-box { background: rgba(255,255,255,0.95); color: #333; padding: 35px 50px; border-radius: 15px; margin-bottom: 25px; max-width: 550px; }
+        .cta-box p { font-size: 1.1em; margin-bottom: 10px; }
+        .terms { background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 8px; font-size: 0.95em; }
+        
+        .nav { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 15px; z-index: 100; }
+        .nav button { background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-size: 0.85em; }
+        .slide-counter { position: fixed; bottom: 20px; right: 20px; color: rgba(255,255,255,0.5); font-size: 0.85em; }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide slide-1 active">
+        <h1>Sheluxe Beauty</h1>
+        <h2>专业网站与网络形象方案 | Professional Website & Digital Presence</h2>
+        <div class="packages-preview">
+            <div class="package-mini"><h3>Website Only<br>仅网站</h3><div class="price">$500</div></div>
+            <div class="package-mini"><h3>Web + GB DIY<br>自助谷歌</h3><div class="price">$600</div><div class="save">Save $50!</div></div>
+            <div class="package-mini"><h3>Web + GB Full<br>托管谷歌</h3><div class="price">$700</div></div>
+            <div class="package-mini"><h3>DIY + Reviews<br>自助+评论</h3><div class="price">$750</div></div>
+            <div class="package-mini"><h3>Complete<br>完整配套</h3><div class="price">$850</div></div>
+        </div>
+        <p style="margin-top: 25px;">5 Options | 五种配套可选</p>
+        <p style="font-size: 0.85em; color: #666;">CAPELLA WEB | UEN: 53518964L | PayNow: 96639432</p>
+    </div>
+
+    <!-- Slide 2: Problem/Solution -->
+    <div class="slide slide-2">
+        <h2>The Problem & Solution | 问题与解决方案</h2>
+        <div class="problems">
+            <div class="problem-box">
+                <h3>🔍 Problem | 问题</h3>
+                <ul>
+                    <li>Customers can not find you on Google</li>
+                    <li>Your 106 five-star reviews are hidden</li>
+                    <li>No professional online presence</li>
+                    <li>Competitors with websites win business</li>
+                </ul>
+            </div>
+            <div class="problem-box">
+                <h3>✅ Solution | 解决方案</h3>
+                <ul>
+                    <li>Professional website customers can visit</li>
+                    <li>4.9 stars featured prominently</li>
+                    <li>Instant WhatsApp booking</li>
+                    <li>Appear in Google searches</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Option 1 - Website Only -->
+    <div class="slide slide-package">
+        <h2>Option 1: Website Only | 仅网站配套</h2>
+        <div class="price-tag">S$500</div>
+        <div class="package-content">
+            <div class="you-get">
+                <h3>What You Get | 包含内容</h3>
+                <ul>
+                    <li><strong>1-Page Website with 5 Sections</strong><span class="chinese">1页网站，5个版块</span></li>
+                    <div class="section-list">
+                        <span class="section-tag">Hero</span>
+                        <span class="section-tag">Services</span>
+                        <span class="section-tag">Gallery</span>
+                        <span class="section-tag">About</span>
+                        <span class="section-tag">Contact</span>
+                    </div>
+                    <li style="margin-top:10px">Mobile-optimized design<span class="chinese">手机优化设计</span></li>
+                    <li>WhatsApp "Book Now" button<span class="chinese">WhatsApp预约按钮</span></li>
+                    <li>Tap-to-call button<span class="chinese">一键拨号</span></li>
+                    <li>Photo gallery (12-20 photos)<span class="chinese">照片画廊（12-20张）</span></li>
+                    <li>Free hosting forever<span class="chinese">永久免费托管</span></li>
+                </ul>
+            </div>
+            <div class="you-provide">
+                <h3>You Provide | 您需提供</h3>
+                <ul>
+                    <li>15-20 photos of your work<span class="chinese">15-20张作品照片</span></li>
+                    <li>Service list with prices<span class="chinese">服务清单及价格</span></li>
+                    <li>Business hours<span class="chinese">营业时间</span></li>
+                    <li>Contact info<span class="chinese">联系信息</span></li>
+                </ul>
+                <div class="note">Good if you already have Google Business set up.<span class="chinese">适合已有谷歌商业设置的客户。</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Option 2 -->
+    <div class="slide slide-green">
+        <h2>Option 2: Web + Google Business (DIY) | 网站+谷歌商业（自助）</h2>
+        <div class="save-badge">SAVE S$50 | 节省S$50</div>
+        <div class="price-tag" style="font-size: 2em; color: #0d5c4d;">S$600</div>
+        <div class="package-content">
+            <div class="you-get">
+                <h3>What You Get | 包含内容</h3>
+                <ul>
+                    <li>1-page 5-section website<span class="chinese">1页5版块网站</span></li>
+                    <li>Bilingual setup guide (EN/CN)<span class="chinese">中英文双语设置指南</span></li>
+                    <li>30-min video call training<span class="chinese">30分钟视频培训</span></li>
+                    <li>4 weeks of post content written<span class="chinese">4周帖子内容已写好</span></li>
+                    <li>All templates provided<span class="chinese">提供所有模板</span></li>
+                </ul>
+            </div>
+            <div class="you-provide">
+                <h3>You Do | 您需操作</h3>
+                <ul>
+                    <li>Create business Gmail<span class="chinese">创建商业Gmail</span></li>
+                    <li>Follow guide to set up<span class="chinese">按照指南设置</span></li>
+                    <li>Upload photos<span class="chinese">上传照片</span></li>
+                    <li>Copy and paste posts<span class="chinese">复制粘贴帖子</span></li>
+                </ul>
+                <div class="note">I guide you but YOU click.<span class="chinese">我指导但由您操作。</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Option 3 -->
+    <div class="slide slide-package">
+        <h2>Option 3: Web + Google Business (Full) | 网站+谷歌商业（全托管）</h2>
+        <div class="recommended-badge">MOST POPULAR | 最受欢迎</div>
+        <div class="price-tag">S$700</div>
+        <div class="package-content">
+            <div class="you-get">
+                <h3>What You Get | 包含内容</h3>
+                <ul>
+                    <li>1-page 5-section website<span class="chinese">1页5版块网站</span></li>
+                    <li>I set up Google Business FOR you<span class="chinese">我为您设置谷歌商业</span></li>
+                    <li>Upload 20+ photos<span class="chinese">上传20+张照片</span></li>
+                    <li>Write services & descriptions<span class="chinese">撰写所有服务及描述</span></li>
+                    <li>Post 4 updates<span class="chinese">发布4篇更新</span></li>
+                </ul>
+            </div>
+            <div class="you-provide">
+                <h3>You Do | 您需操作</h3>
+                <ul>
+                    <li>Create Gmail (5 mins)<span class="chinese">创建Gmail（5分钟）</span></li>
+                    <li>Add me as Manager (2 mins)<span class="chinese">加我为管理员（2分钟）</span></li>
+                    <li>Send photos via WhatsApp<span class="chinese">WhatsApp发照片</span></li>
+                    <li>Approve the work<span class="chinese">审核作品</span></li>
+                </ul>
+                <div class="note">I do 95% of work. You just approve.<span class="chinese">我做95%的工作，您只需审核。</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Option 4 -->
+    <div class="slide slide-pink">
+        <h2>Option 4: DIY Package + Review System | 自助配套+评论系统</h2>
+        <div class="price-tag">S$750</div>
+        <div class="package-content">
+            <div class="you-get">
+                <h3>What You Get | 包含内容</h3>
+                <ul>
+                    <li>Website + GB DIY Guide<span class="chinese">网站+谷歌商业自助指南</span></li>
+                    <li>WhatsApp Business setup guide<span class="chinese">WhatsApp商业设置指南</span></li>
+                    <li>Review request templates<span class="chinese">评论请求模板</span></li>
+                    <li>Quick reply templates<span class="chinese">快捷回复模板</span></li>
+                    <li>QR code for reviews<span class="chinese">店内评论二维码</span></li>
+                </ul>
+            </div>
+            <div class="you-provide">
+                <h3>You Do | 您需操作</h3>
+                <ul>
+                    <li>Set up Google Business (DIY)<span class="chinese">自助设置谷歌商业</span></li>
+                    <li>Set up WhatsApp Business<span class="chinese">设置WhatsApp商业</span></li>
+                    <li>Send review requests yourself<span class="chinese">自己发送评论请求</span></li>
+                    <li>Manage reviews<span class="chinese">自己管理评论</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Option 5 -->
+    <div class="slide slide-gold">
+        <h2>Option 5: Complete Package | 完整全托管配套</h2>
+        <div class="recommended-badge" style="background:#d4af37;color:#1e3a5f;">BEST VALUE | 最佳价值</div>
+        <div class="price-tag">S$850</div>
+        <div class="package-content">
+            <div class="you-get">
+                <h3 style="color:#d4af37;">Everything Included | 包含所有</h3>
+                <ul>
+                    <li>1-page 5-section website<span class="chinese">1页5版块网站</span></li>
+                    <li>Google Business (I do all)<span class="chinese">谷歌商业（我全做）</span></li>
+                    <li>WhatsApp Business setup<span class="chinese">WhatsApp商业设置</span></li>
+                    <li>Review system templates<span class="chinese">评论系统及模板</span></li>
+                    <li>QR code + training<span class="chinese">二维码+培训</span></li>
+                </ul>
+            </div>
+            <div class="you-provide">
+                <h3 style="color:#d4af37;">You Do Almost Nothing | 几乎不用做</h3>
+                <ul>
+                    <li>Create Gmail (5 mins)<span class="chinese">创建Gmail</span></li>
+                    <li>Add me as Manager (2 mins)<span class="chinese">加我为管理员</span></li>
+                    <li>Send photos<span class="chinese">发照片</span></li>
+                    <li>That is it!<span class="chinese">就这些！</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Booking -->
+    <div class="slide slide-booking">
+        <h2>3 Ways Customers Can Book | 三种预约方式</h2>
+        <div class="booking-demo">
+            <div class="booking-card">
+                <div class="icon">💬</div>
+                <h3>WhatsApp</h3>
+                <p>"Book Now" opens WhatsApp. You reply and confirm.</p>
+            </div>
+            <div class="booking-card">
+                <div class="icon">📞</div>
+                <h3>Tap to Call</h3>
+                <p>One tap = instant call. No apps needed.</p>
+            </div>
+            <div class="booking-card">
+                <div class="icon">📧</div>
+                <h3>Contact Form</h3>
+                <p>Customer submits details. You call back.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Timeline -->
+    <div class="slide slide-timeline">
+        <h2>Delivery Timeline | 交付时间表</h2>
+        <div class="timeline">
+            <div class="timeline-step">
+                <h3>Week 1</h3>
+                <h4>Meeting</h4>
+                <p>Discuss, share photos, deposit</p>
+            </div>
+            <div class="timeline-step">
+                <h3>Wed-Fri</h3>
+                <h4>I Build</h4>
+                <p>Website, Google, Reviews</p>
+            </div>
+            <div class="timeline-step">
+                <h3>Friday</h3>
+                <h4>Review</h4>
+                <p>See preview, changes, approve</p>
+            </div>
+            <div class="timeline-step">
+                <h3>Next Mon</h3>
+                <h4>Go Live!</h4>
+                <p>Live, training, final payment</p>
+            </div>
+        </div>
+        <p style="margin-top: 20px;">1 week from meeting to live site</p>
+    </div>
+
+    <!-- Slide 10: Pricing Table -->
+    <div class="slide slide-pricing">
+        <h2>Choose Your Package | 选择您的配套</h2>
+        <div class="pricing-table">
+            <div class="price-card">
+                <h3>Web Only</h3>
+                <div class="amount">$500</div>
+                <ul>
+                    <li>1-page 5 sections</li>
+                    <li>Mobile optimized</li>
+                    <li>WhatsApp booking</li>
+                </ul>
+            </div>
+            <div class="price-card">
+                <h3>Web + GB DIY</h3>
+                <div class="amount">$600</div>
+                <div class="save">Save $50!</div>
+                <ul>
+                    <li>1-page website</li>
+                    <li>Bilingual guide</li>
+                    <li>Video training</li>
+                </ul>
+            </div>
+            <div class="price-card popular">
+                <div class="badge">POPULAR</div>
+                <h3>Web + GB Full</h3>
+                <div class="amount">$700</div>
+                <ul>
+                    <li>1-page website</li>
+                    <li>I do Google setup</li>
+                    <li>Most choose this</li>
+                </ul>
+            </div>
+            <div class="price-card">
+                <h3>DIY + Reviews</h3>
+                <div class="amount">$750</div>
+                <ul>
+                    <li>Website + GB DIY</li>
+                    <li>Review system</li>
+                    <li>QR code</li>
+                </ul>
+            </div>
+            <div class="price-card complete">
+                <div class="badge">COMPLETE</div>
+                <h3>Complete</h3>
+                <div class="amount">$850</div>
+                <ul>
+                    <li>Everything</li>
+                    <li>Hands-off</li>
+                    <li>Best value</li>
+                </ul>
+            </div>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9em;">All: 50% deposit, 50% on delivery</p>
+    </div>
+
+    <!-- Slide 11: CTA -->
+    <div class="slide slide-cta">
+        <h2>Ready? | 开始吧！</h2>
+        <div class="cta-box">
+            <p><strong>Your business deserves to be found.</strong></p>
+            <p style="color: #8b5a5a;">你的生意值得被发现。</p>
+            <p>✓ Choose your package today</p>
+            <p>✓ 50% deposit to start</p>
+            <p>✓ Website live in 1 week</p>
+            <p>✓ You own everything forever</p>
+        </div>
+        <div class="terms">
+            <p><strong>Payment: PayNow, Bank Transfer, or Cash</strong></p>
+            <p>PayNow: <strong>96639432 (Janice Wee Tien Yong)</strong></p>
+            <p>CAPELLA WEB | UEN: 53518964L</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <button onclick="prevSlide()">← Prev</button>
+        <button onclick="nextSlide()">Next →</button>
+    </div>
+    <div class="slide-counter"><span id="current">1</span> / 11</div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const counter = document.getElementById('current');
+        function showSlide(n) { slides.forEach(s => s.classList.remove('active')); slides[n].classList.add('active'); counter.textContent = n + 1; }
+        function nextSlide() { currentSlide = (currentSlide + 1) % slides.length; showSlide(currentSlide); }
+        function prevSlide() { currentSlide = (currentSlide - 1 + slides.length) % slides.length; showSlide(currentSlide); }
+        document.addEventListener('keydown', (e) => { if(e.key === 'ArrowRight') nextSlide(); if(e.key === 'ArrowLeft') prevSlide(); });
+    </script>
+</body>
+</html>
