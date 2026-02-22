@@ -60,8 +60,15 @@
         ol, ul { margin-left: 25px; }
         li { margin: 8px 0; }
         @media print {
-            body { padding: 20px; }
+            body { padding: 20px; font-size: 11pt; }
+            h1 { font-size: 16pt; margin: 15px 0; }
+            h2 { font-size: 13pt; margin: 15px 0; }
             .page-break { page-break-before: always; }
+            .new-page { page-break-before: always; }
+            table { page-break-inside: avoid; }
+            .signature-area { page-break-inside: avoid; margin-top: 30px; }
+            .price-box { margin: 20px 0; padding: 20px; }
+            li { margin: 5px 0; }
         }
     </style>
 </head>
@@ -164,7 +171,7 @@
         </div>
     </div>
 
-    <div class="page-break"></div>
+    <div class="new-page"></div>
 
     <!-- INVOICE -->
     <div class="header">
@@ -238,6 +245,8 @@
     </p>
 
     <div class="page-break"></div>
+
+    <div class="new-page"></div>
 
     <!-- OFFICIAL RECEIPT -->
     <div class="header">

@@ -23,7 +23,15 @@
         .signature-box { border-top: 1px solid #333; padding-top: 10px; margin-top: 60px; }
         .chinese { color: #666; font-size: 0.9em; display: block; margin-top: 3px; }
         ul { margin-left: 25px; } li { margin: 8px 0; }
-        @media print { body { padding: 20px; } .page-break { page-break-before: always; } }
+        @media print { 
+            body { padding: 20px; font-size: 11pt; }
+            h1 { font-size: 16pt; margin: 15px 0; }
+            h2 { font-size: 13pt; margin: 15px 0; }
+            .page-break { page-break-before: always; }
+            .new-page { page-break-before: always; }
+            table { page-break-inside: avoid; }
+            .signature-area { page-break-inside: avoid; }
+        }
     </style>
 </head>
 <body>

@@ -40,7 +40,15 @@
         ol, ul { margin-left: 25px; }
         li { margin: 8px 0; }
         .option-tag { background: #28a745; color: white; padding: 5px 15px; border-radius: 20px; display: inline-block; margin-bottom: 10px; font-size: 0.9em; }
-        @media print { body { padding: 20px; } .page-break { page-break-before: always; } }
+        @media print { 
+            body { padding: 20px; font-size: 11pt; }
+            h1 { font-size: 16pt; margin: 15px 0; }
+            h2 { font-size: 13pt; margin: 15px 0; }
+            .page-break { page-break-before: always; }
+            .new-page { page-break-before: always; }
+            table { page-break-inside: avoid; }
+            .signature-area { page-break-inside: avoid; margin-top: 30px; }
+        }
     </style>
 </head>
 <body>
@@ -150,7 +158,7 @@
         </div>
     </div>
 
-    <div class="page-break"></div>
+    <div class="new-page"></div>
 
     <!-- INVOICE -->
     <div class="header">

@@ -26,7 +26,15 @@
         ul { margin-left: 25px; } li { margin: 8px 0; }
         .check { color: #28a745; font-weight: bold; }
         .value { color: #d4af37; font-weight: bold; }
-        @media print { body { padding: 20px; } .page-break { page-break-before: always; } }
+        @media print { 
+            body { padding: 20px; font-size: 11pt; }
+            h1 { font-size: 16pt; margin: 15px 0; }
+            h2 { font-size: 13pt; margin: 15px 0; }
+            .page-break { page-break-before: always; }
+            .new-page { page-break-before: always; }
+            table { page-break-inside: avoid; }
+            .signature-area { page-break-inside: avoid; }
+        }
     </style>
 </head>
 <body>
